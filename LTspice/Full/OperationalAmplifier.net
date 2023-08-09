@@ -1,0 +1,41 @@
+* C:\Users\andre\Desktop\Universita\PrimoAnno\SecondoSemestre\ProgettiAnalogici\OpAmpProject\OperationalAmplifier.asc
+Cl1 VoutDyn 0 5p
+Vin1 VinDyn 0 0 AC 1 0
+Vdd1 N003 0 2.5
+Vss1 N006 0 -2.5
+Cl2 VoutNoise 0 5p
+Vin2 VinNoise 0 PULSE(0 1 2u 0.1n 0.1n 2.5u 5u 2)
+Vdd2 N002 0 2.5
+Vss2 N005 0 -2.5
+Cl3 VoutSR 0 5p
+Vin3 VinSR 0 PULSE(0 1 10u 1n 1n 5u 10u 3)
+Vdd3 N001 0 2.5
+Vss3 N004 0 -2.5
+Cl4 VoutSwingCM 0 5p
+Vin4 VinSwingCM 0 1
+Vdd4 N008 0 2.5
+Vss4 N011 0 -2.5
+Cl5 VoutSwingOut 0 5p
+Vin5 VinSwingOut 0 1
+Vdd5 N007 0 2.5
+Vss5 N010 0 -2.5
+R1 N009 VinSwingOut 10G
+R2 VoutSwingOut N009 100G
+XU1 VinDyn 0 VoutDyn N003 N006 myOPAMP
+XU2 VinNoise VoutNoise VoutNoise N002 N005 myOPAMP
+XU3 VinSR VoutSR VoutSR N001 N004 myOPAMP
+XU4 VinSwingCM VoutSwingCM VoutSwingCM N008 N011 myOPAMP
+XU5 0 N009 VoutSwingOut N007 N010 myOPAMP
+* Simulazione P.M., Wo e DCgain
+;ac dec 1000 1 10MEG
+* Simulazione Rumore
+;noise V(voutnoise) Vin2 dec 1001 1k 10MEG
+* Simulazione Slew-Rate
+;tran 0 40u 0
+* Simulazione variazione Tensione di Modo Comune
+;dc Vin4 -2.6 2.6 0.01
+* Simulazione variazione Tensione d'Uscita
+.dc Vin5 -2.6 2.6 0.01
+.lib C:\Users\andre\Desktop\Universita\PrimoAnno\SecondoSemestre\ProgettiAnalogici\OpAmpProject\OperationalAmplifier.cir
+.backanno
+.end
