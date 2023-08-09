@@ -1,0 +1,45 @@
+*******************************************************************************************************
+*** author: 		Andrea Castronovo
+**  n.matricola: 	0001029122
+*	description:	Circuito amplificatore operazionale semplificato (No Bias)
+*******************************************************************************************************
+
+*Modello Mos
+.model NMOS NMOS (LEVEL=1, VTO=0.71, KP=182u, PHI=0.6, gamma=0.01, LAMBDA=0.01, tox=9.6n, cj=350u,
++ cjsw=12p, mj=0.33, mjsw=0.33, pb=0.8, cgso=0.046n, cgdo=0.046n)
+
+.model	 PMOS PMOS (LEVEL=1, VTO=-0.901, KP=41.5u, PHI=0.6, gamma=0.01, LAMBDA=0.01, tox=9.6n, cj=350u,
++ cjsw=12p, mj=0.33, mjsw=0.33, pb=0.8, cgso=0.046n, cgdo=0.046n)
+
+*					 +
+*					 |   -
+*					 |	 |	 OUT
+*					 |   |   |
+*					 |   |   |  Vdd
+*					 |   |   |  |  Vss
+*					 |   |   |  |  |
+.SUBCKT OPAMPBASIC	200 100 300 99 66
+*Mname Drain Gate Source Bulk N/Pmos L e W
+
+*Differential Pair
+M1 1 100 3 66 NMOS L=1u W=1.987235788u
+M2 2 200 3 66 NMOS L=1u W=1.987235788u
+*Current Mirror
+M3 1 1 99 99 PMOS L=1u W=5.053827126u
+M4 2 1 99 99 PMOS L=1u W=5.053827126u
+*Common Source
+M6 300 2 99 99 PMOS L=4.394509212u W=165.6285323u
+M7 300 4 66 66 NMOS L=1u W=3.42961014u
+*Polarization
+M5 3 4 66 66 NMOS L=1u W=919.7511892n
+M8 4 4 66 66 NMOS L=1u W=857.4025351n
+*VandI
+*******Vdd 99 0 DC 2.5
+*******Vss 0 66 DC 2.5
+Ib 99 4 DC 8.54034581u
+*Passive
+Rc 2 123 16373.07338
+Cc 123 300 1.832276648p
+
+.OP
+.ENDS OPAMPBASIC
