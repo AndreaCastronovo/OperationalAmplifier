@@ -1,4 +1,4 @@
-Circuit: * C:\Users\andre\Desktop\Universita\PrimoAnno\SecondoSemestre\ProgettiAnalogici\OpAmpProject\SR_Basic.asc
+Circuit: * C:\Users\andre\Desktop\Universita\PrimoAnno\SecondoSemestre\ProgettiAnalogici\OpAmpProject\Basic\SR_Basic.asc
 
 Model "pmos": Oxide thickness thinner than recommended for a level 1 MOSFET.
 Instance "m:u1:6": Length shorter than recommended for a level 1 MOSFET.
@@ -19,20 +19,20 @@ Instance "m:u1:1": Length shorter than recommended for a level 1 MOSFET.
 Instance "m:u1:1": Width narrower than recommended for a level 1 MOSFET.
 Direct Newton iteration for .op point succeeded.
 
-Date: Tue Aug 08 19:42:23 2023
-Total elapsed time: 0.200 seconds.
+Date: Thu Aug 10 17:20:02 2023
+Total elapsed time: 0.246 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 3106
-traniter = 3096
-tranpoints = 1444
-accept = 1320
-rejected = 124
+totiter = 3065
+traniter = 3055
+tranpoints = 1419
+accept = 1305
+rejected = 114
 matrix size = 12
 fillins = 0
 solver = Normal
-Matrix Compiler1: 956 bytes object code size  0.5/0.4/[0.2]
-Matrix Compiler2: off  [0.3]/0.5/0.8
+Matrix Compiler1: 956 bytes object code size  0.7/0.4/[0.2]
+Matrix Compiler2: off  [0.3]/1.1/1.1
 

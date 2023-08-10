@@ -1,7 +1,7 @@
 *******************************************************************************************************
 *** author: 		Andrea Castronovo
 **  n.matricola: 	0001029122
-*	description:	Circuito amplificatore operazionale semplificato (No Bias)
+*	description:	Circuito amplificatore operazionale completo
 *******************************************************************************************************
 
 *Modello Mos
@@ -28,7 +28,7 @@ M2 2 200 3 66 NMOS L=1u W=1.987235788u
 M3 1 1 99 99 PMOS L=1u W=5.053827126u
 M4 2 1 99 99 PMOS L=1u W=5.053827126u
 *Common Source
-M6 300 2 99 99 PMOS L=4.394509212u W=165.6285323u
+M6 300 2 99 99 PMOS L=4.394352177u W=165.6226137u
 M7 300 4 66 66 NMOS L=1u W=3.42961014u
 *Polarization
 M5 3 4 66 66 NMOS L=1u W=919.7511892n
@@ -39,13 +39,13 @@ M8 4 4 66 66 NMOS L=1u W=857.4025351n
 *******Ib 99 4 DC 8.54034581u
 *Passive
 *******Rc 2 123 16373.07338
-M9 123 10 2 99 PMOS L=1u W=4.905693836u
+M9 123 10 2 99 PMOS L=1u W=10.10765425u
 Cc 123 300 1.832276648p
-Rb 11 66 19.369k
+Rb 11 66 19369.53515
 *Biasing
-M10 4 10 13 99 PMOS L=1u W=4.573143676u
+M10 4 10 13 99 PMOS L=1u W=9.422470425u
 M11 13 12 99 99 PMOS L=1u W=9.422470425u
-M12 10 10 12 99 PMOS L=1u W=4.573143676u
+M12 10 10 12 99 PMOS L=1u W=9.422470425u
 M13 12 12 99 99 PMOS L=1u W=9.422470425u
 M14 10 4 11 66 NMOS L=1u W=3.42961014u
 
