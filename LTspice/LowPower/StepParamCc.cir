@@ -1,0 +1,71 @@
+*******************************************************************************************************
+*** author: 		Andrea Castronovo
+**  n.matricola: 	0001029122
+*	description:	Circuito amplificatore operazionale completo con riduzione di potenza
+*******************************************************************************************************
+
+*Modello Mos
+.model NMOS NMOS (LEVEL=1, VTO=0.71, KP=182u, PHI=0.6, gamma=0.01, LAMBDA=0.01, tox=9.6n, cj=350u,
++ cjsw=12p, mj=0.33, mjsw=0.33, pb=0.8, cgso=0.046n, cgdo=0.046n)
+
+.model	 PMOS PMOS (LEVEL=1, VTO=-0.901, KP=41.5u, PHI=0.6, gamma=0.01, LAMBDA=0.01, tox=9.6n, cj=350u,
++ cjsw=12p, mj=0.33, mjsw=0.33, pb=0.8, cgso=0.046n, cgdo=0.046n)
+
+*				 +
+*				 |   -
+*				 |	 |	 OUT
+*				 |   |   |
+*				 |   |   |  Vdd
+*				 |   |   |  |  Vss
+*				 |   |   |  |  |
+*.SUBCKT myOPAMPLowPow	200 100 300 99 66
+*Mname Drain Gate Source Bulk N/Pmos L e W
+
+*Differential Pair
+M1 1 300 3 66 NMOS L=1u W={Width1({Xc})}
+M2 2 202 3 66 NMOS L=1u W={Width1({Xc})}
+*Current Mirror
+M3 1 1 99 99 PMOS L=1u W={Width3({Xc})}
+M4 2 1 99 99 PMOS L=1u W={Width3({Xc})}
+*Common Source
+M6 300 2 99 99 PMOS L={Length6({Xc}, {Scl})} W={Width6({Xc}, {Scl})}
+M7 300 4 66 66 NMOS L=1u W={Width7({Scl})}
+*Polarization
+M5 3 4 66 66 NMOS L=1u W={Width5({Xc})}
+M8 4 4 66 66 NMOS L=1u W={Width8({Scl})}
+*VandI
+Vdd 99 0 DC 2.5
+Vss 0 66 DC 2.5
+Vin 202 0 PULSE(0 1 2u 0.1n 0.1n 2.5u 5u 2)
+*******Ib 99 4 DC 8.54034581u
+*Passive
+*******Rc 2 123 16373.07338
+M9 123 10 2 99 PMOS L=1u W={Width9({Xc})}
+Cc 123 300 {Xc}
+Cl 300 0 5p
+Rb 11 66 {Resistanceb({Scl})}
+*Biasing
+M10 4 10 13 99 PMOS L=1u W={Width13({Scl})}
+M11 13 12 99 99 PMOS L=1u W={Width13({Scl})}
+M12 10 10 12 99 PMOS L=1u W={Width13({Scl})}
+M13 12 12 99 99 PMOS L=1u W={Width13({Scl})}
+M14 10 4 11 66 NMOS L=1u W={Width7({Scl})}
+
+.step param Xc 1.825p 1.8p 0.0025p
+*.param Xc=1.832276648p
+.param Scl={{Xc}+5p}
+
+.function Length6({Xc}, {Scl}) {8.485893405e-6*sqrt({Xc}/{Scl})}
+.function Width6({Xc}, {Scl}) {46811968.39*sqrt({Xc}*{Scl})}
+.function Width1({Xc}) {1.084571912e6*{Xc}}
+.function Width5({Xc}) {5.019717902e5*{Xc}}
+.function Width7({Scl}) {5.019717902e5*{Scl}}
+.function Width3({Xc}) {2.758222745e6*{Xc}}
+.function Width9({Xc}) {5.516445489e6*{Xc}}
+.function Width13({Scl}) {1.379111372e6*{Scl}}
+.function Width8({Scl}) {1.254929476e5*{Scl}}
+.function Resistanceb({Scl}) {1.323380227e-7/{Scl}}
+
+.noise V(300) Vin dec 1001 1k 10MEG
+*.OP
+*.ENDS myOPAMPLowPow

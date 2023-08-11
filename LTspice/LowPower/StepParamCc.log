@@ -1,0 +1,168 @@
+.STEP increment has wrong sign -- fixing...
+Circuit: *******************************************************************************************************
+
+Model "pmos": Oxide thickness thinner than recommended for a level 1 MOSFET.
+Instance "m13": Length shorter than recommended for a level 1 MOSFET.
+Instance "m13": Width narrower than recommended for a level 1 MOSFET.
+Instance "m12": Length shorter than recommended for a level 1 MOSFET.
+Instance "m12": Width narrower than recommended for a level 1 MOSFET.
+Instance "m11": Length shorter than recommended for a level 1 MOSFET.
+Instance "m11": Width narrower than recommended for a level 1 MOSFET.
+Instance "m10": Length shorter than recommended for a level 1 MOSFET.
+Instance "m10": Width narrower than recommended for a level 1 MOSFET.
+Instance "m9": Length shorter than recommended for a level 1 MOSFET.
+Instance "m9": Width narrower than recommended for a level 1 MOSFET.
+Instance "m6": Length shorter than recommended for a level 1 MOSFET.
+Instance "m4": Length shorter than recommended for a level 1 MOSFET.
+Instance "m4": Width narrower than recommended for a level 1 MOSFET.
+Instance "m3": Length shorter than recommended for a level 1 MOSFET.
+Instance "m3": Width narrower than recommended for a level 1 MOSFET.
+Model "nmos": Oxide thickness thinner than recommended for a level 1 MOSFET.
+Instance "m14": Length shorter than recommended for a level 1 MOSFET.
+Instance "m14": Width narrower than recommended for a level 1 MOSFET.
+Instance "m8": Length shorter than recommended for a level 1 MOSFET.
+Instance "m8": Width narrower than recommended for a level 1 MOSFET.
+Instance "m5": Length shorter than recommended for a level 1 MOSFET.
+Instance "m5": Width narrower than recommended for a level 1 MOSFET.
+Instance "m7": Length shorter than recommended for a level 1 MOSFET.
+Instance "m7": Width narrower than recommended for a level 1 MOSFET.
+Instance "m2": Length shorter than recommended for a level 1 MOSFET.
+Instance "m2": Width narrower than recommended for a level 1 MOSFET.
+Instance "m1": Length shorter than recommended for a level 1 MOSFET.
+Instance "m1": Width narrower than recommended for a level 1 MOSFET.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+vernier = 0.5
+vernier = 0.25
+Gmin = 2.09715
+vernier = 0.125
+vernier = 0.0625
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+Gmin = 1.64556
+vernier = 0.00390625
+vernier = 0.00195313
+vernier = 0.000976563
+vernier = 0.000488281
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 33.6174%
+vernier = 0.000976563
+Source Step = 33.6352%
+Source Step = 33.6648%
+Source Step = 33.6944%
+Source Step = 33.724%
+Source Step = 33.7536%
+vernier = 0.00146484
+Source Step = 33.7935%
+Source Step = 33.8379%
+Source Step = 33.8823%
+Source Step = 33.9267%
+Source Step = 33.9711%
+vernier = 0.00219727
+Source Step = 34.0288%
+Source Step = 34.0953%
+Source Step = 34.1619%
+Source Step = 34.2285%
+Source Step = 34.2951%
+vernier = 0.0032959
+Source Step = 34.3783%
+Source Step = 34.4782%
+Source Step = 34.5781%
+Source Step = 34.678%
+Source Step = 34.7778%
+vernier = 0.00494385
+Source Step = 34.8977%
+Source Step = 35.0475%
+Source Step = 35.1973%
+Source Step = 35.3471%
+Source Step = 35.4969%
+vernier = 0.00741577
+Source Step = 35.6692%
+Source Step = 35.8939%
+Source Step = 36.1187%
+Source Step = 36.3434%
+Source Step = 36.5681%
+vernier = 0.0111237
+Source Step = 36.8153%
+Source Step = 37.1524%
+Source Step = 37.4895%
+Source Step = 37.8265%
+Source Step = 38.1636%
+vernier = 0.0166855
+Source Step = 38.5176%
+Source Step = 39.0232%
+Source Step = 39.5288%
+Source Step = 40.0344%
+Source Step = 40.54%
+Source Step = 41.0457%
+vernier = 0.0250282
+Source Step = 41.8041%
+Source Step = 42.5625%
+Source Step = 43.321%
+Source Step = 44.0794%
+Source Step = 44.8378%
+vernier = 0.0375423
+Source Step = 45.9375%
+Source Step = 47.0752%
+Source Step = 48.2128%
+Source Step = 49.3505%
+Source Step = 50.4881%
+vernier = 0.0563135
+Source Step = 52.0808%
+Source Step = 53.7873%
+Source Step = 55.4938%
+Source Step = 57.2002%
+Source Step = 58.9067%
+vernier = 0.0844703
+Source Step = 61.2104%
+Source Step = 63.7702%
+Source Step = 66.3299%
+Source Step = 68.8896%
+Source Step = 71.4493%
+vernier = 0.126705
+Source Step = 74.7769%
+Source Step = 78.6164%
+Source Step = 82.456%
+Source Step = 86.2956%
+Source Step = 90.1351%
+vernier = 0.190058
+Source Step = 94.9346%
+Source Step = 100%
+Source stepping succeeded in finding the operating point.
+
+.step xc=1.8e-012
+.step xc=1.8025e-012
+.step xc=1.805e-012
+.step xc=1.8075e-012
+.step xc=1.81e-012
+.step xc=1.8125e-012
+.step xc=1.815e-012
+.step xc=1.8175e-012
+.step xc=1.82e-012
+.step xc=1.8225e-012
+.step xc=1.825e-012
+
+Date: Fri Aug 11 12:15:48 2023
+Total elapsed time: 4.125 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 4190
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 16
+fillins = 5
+solver = Normal
+Matrix Compiler1:     111 opcodes
+Matrix Compiler2:     146 opcodes  0.5/[0.5]/2.4
+
